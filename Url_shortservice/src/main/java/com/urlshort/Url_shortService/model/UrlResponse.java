@@ -7,11 +7,21 @@ public class UrlResponse
     private String originalUrl;
     private String shortLnk;
     private LocalDateTime expirationDate;
+    private int qtd;
+
+    public int getQtd() {
+        return qtd;
+    }
+
+    public void setQtd(int qtd) {
+        this.qtd = qtd;
+    }
 
     public UrlResponse(String originalUrl, String shortLnk, LocalDateTime expirationDate) {
         this.originalUrl = originalUrl;
         this.shortLnk = shortLnk;
         this.expirationDate = expirationDate;
+        this.qtd = qtd;
     }
 
     public UrlResponse() {

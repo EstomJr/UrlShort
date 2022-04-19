@@ -18,6 +18,15 @@ public class Url
     private String shortLink;
     private LocalDateTime creationDate;
     private LocalDateTime expirationDate;
+    private int qtd;
+
+    public int getQtd() {
+        return qtd;
+    }
+
+    public void setQtd(int qtd) {
+        this.qtd = qtd;
+    }
 
     public Url() {
         this.id = id;
@@ -26,6 +35,9 @@ public class Url
         this.creationDate = creationDate;
         this.expirationDate = expirationDate;
     }
+   // public String getOriginalUrl(){
+    //    return originalUrl;
+   // }
 
     public long getId() {
         return id;
@@ -35,8 +47,8 @@ public class Url
         this.id = id;
     }
 
-    public String getOriginalUrl() {
-        return originalUrl;
+   public String getOriginalUrl() {
+       return originalUrl;
     }
 
     public void setOriginalUrl(String originalUrl) {

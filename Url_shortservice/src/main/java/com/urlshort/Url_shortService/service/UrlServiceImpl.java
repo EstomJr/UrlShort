@@ -3,6 +3,7 @@ package com.urlshort.Url_shortService.service;
 
 import com.google.common.hash.Hashing;
 import com.urlshort.Url_shortService.model.LinklDto;
+import com.urlshort.Url_shortService.model.Qtd;
 import com.urlshort.Url_shortService.model.Url;
 import com.urlshort.Url_shortService.repository.UrlRepository;
 import org.apache.commons.lang3.StringUtils;
@@ -57,7 +58,8 @@ public class UrlServiceImpl implements UrlService {
     @Override
     public Url getEncodedUrl(String url) {
         Url urlToRet = urlRepository.findByShortLink(url);
-
+        urlToRet.setQtd(urlToRet.getQtd() != 0 ? urlToRet.getQtd() + 1 : 1 );
+        urlRepository.save(urlToRet);
         return urlToRet;
     }
 
@@ -66,5 +68,10 @@ public class UrlServiceImpl implements UrlService {
 
         urlRepository.delete(url);
 
+    }
+
+    @Override
+    public Url generateAmount(Qtd qtd) {
+        return null;
     }
 }
